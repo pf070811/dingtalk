@@ -9,6 +9,7 @@
             "email": "wph45@163.com"
         }
     ],
+    "minimum-stability":"stable",
     "require": {
         "php": ">=7.0",
         "guzzlehttp/guzzle": "^6.2"
