@@ -1,0 +1,21 @@
+{
+    "name": "penghai/pfdingtalk",
+    "description": "钉钉接口",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "penghai",
+            "email": "wph45@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "pfDingTalk\\": "src/"
+        }
+    }
+}
