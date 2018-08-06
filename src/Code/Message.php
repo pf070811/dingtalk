@@ -28,7 +28,6 @@ class Message extends BaseRequest
         $toData['agentid'] = $this->config['agentid'];
         $toData['msgtype'] = $params['msgtype'] ?? 'text';
         $toData[$toData['msgtype']] = $params[$toData['msgtype']] ?? [];
-        
         $info = $this->httpPost($path, json_encode($toData));
         return $info;
     }
