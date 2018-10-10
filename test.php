@@ -10,10 +10,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 use pfDingTalk\Application;
 $config = [
     'oapi_host' => 'https://oapi.dingtalk.com/',
-    'corpid' => '',
-    'corpsecret' => '',
-    'agentid' => '',
-    'noncestr' => '',
+    'corpid' => 'ding71d0a44ce9b1264635c2f4657eb6378f',//E正式
+    'corpsecret' => 'OOnJNJ8JaXhRrQyrseXUsAs7UqWjD23sEigYSI6zAuzQGITjhnaXD15mgbZL_d64',//E正式
+    'agentid' => 180168300,//E正式
+    'noncestr' => 'hxsdabcd1234',
     'access_token' => '',
 ];
 
@@ -52,15 +52,15 @@ $client = new Application($config);
 //}
 
 #发送消息
-//try{
-//    $msg = [
-//        'touser' => '024000542529709779',
-//        'msgtype' => 'text',
-//        'text' => ['content' => 'hello world'],
-//    ];
-//    $data = $client->message->sendMsg($msg);
-//    var_export($data);
-//} catch (Exception $e)
-//{
-//    var_export($e->getMessage());
-//}
+try{
+    $msg = [
+        'touser' => '24000542529709779',
+        'msgtype' => 'text',
+        'text' => ['content' => 'hello world'],
+    ];
+    $data = $client->message->sendMsg($msg);
+    var_export($data);
+} catch (Exception $e)
+{
+    var_export($e->getMessage());
+}
