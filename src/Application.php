@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: wangpenghai
@@ -7,10 +6,8 @@
  * Time: 下午6:08
  */
 namespace pfDingTalk;
-
 use Exception;
 use GuzzleHttp\Client;
-
 class Application
 {
     /**
@@ -24,11 +21,10 @@ class Application
         'oapi_host' => 'https://oapi.dingtalk.com/',
         'corpid' => '',
         'corpsecret' => '',
-        'agentid' => '',
+        'agentid' => '' ,
         'noncestr' => '',
         'access_token' => '',
     ];
-
     /**
      * @var array
      */
@@ -38,7 +34,6 @@ class Application
         'token' => Code\Token::class,
         'message' => Code\Message::class,
     ];
-
     /**
      * Application constructor.
      *
@@ -84,7 +79,6 @@ class Application
     {
         return $this->config;
     }
-
     /**
      * 生成签名
      *
@@ -102,7 +96,6 @@ class Application
             '&url=' . $url;
         return sha1($plain);
     }
-
     /**
      * @param $id
      *
@@ -114,7 +107,6 @@ class Application
         {
             return $this->instanceMap[$key];
         }
-
         $provider = $this->providers[$key]??'';
         if (!empty($provider))
         {
@@ -124,7 +116,6 @@ class Application
             throw new Exception('not found ' . $key . "\n");
         }
     }
-
     public function httpRequest()
     {
         if (isset($this->instanceMap['httpRequest']) && is_array($this->instanceMap['httpRequest']))
